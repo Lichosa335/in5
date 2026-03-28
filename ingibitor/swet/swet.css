@@ -93,7 +93,7 @@
                 .t1{
                     width: 1300px;
                 }
-@media (max-width: 1800px){
+@media (max-width: 18000px){
                 .cell {
                     transition: all 0.3s ease;
                     cursor: pointer;
