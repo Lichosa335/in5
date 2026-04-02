@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="play_2.css">
+
+    <title>Тест Шульте</title>
 </head>
 <body>
+    <div class="pol1" id="pol1">
+        <div class="butt">
+            <div>
+                <a href="../../index.html" class="naim1" >Главная</a>
+            </div>
+            <div class=" ">
+                <a href="../tabl/tabl.html" class="naim2" >Тест</a>
+            </div>
+        </div>
+        <p class="praw-first">Правила</p>
+        <div class="praw" >
+            <h1>Концепичй тренажёра: Запоминайка</h1>
+            <h1>Цель:</h1>
+            <div class="tex">
+                Запоминай последовательность загорающихся ячеек<br>
+                Повторяй их в правильном порядке → +10 очков<br>
+                Ошибаешься → -5 очков и игра заканчивается
+            </div>
+            <h1>Как играть:</h1>
+            <div class="tex">
+                Нажми кнопку "Старт" в игровом поле<br>
+                Смотри и запоминай порядок зелёных ячеек<br>
+                После показа - повтори последовательность<br>
+                Каждый правильный уровень увеличивает сложность<br>
+                Набери максимум очков, пока не ошибёшься!<br>
+                Кнопка "Заново" сбрасывает прогресс
+            </div>
+        </div>
+    <!--    СВЕРХУ ПРАВИЛАААА
+        СНИЗУ КАРТИНКА ИГРЫЫЫЫ
+        -->
+        <p class="first">Игровая зона</p>
+        <div class="play">
+            <button class="play-button" id="play">Играть</button>
+            <img src="../svg/mik.png" alt="Сириус" class="fot">
+        </div>
+    </div>
+    <!--ПОЛЕ С ИГРОЙ СНИЗУУУ!!!!!    -->
+    <div class="nowid" id="pol2">
+            <button class="naim1" style="border:none;" id="esc">Назад</button>
+            <div class="pole-fon">
+                <p class="number" id="number">Уровень</p>
+                <p class="shet" id="shet">Счёт</p>
+                <div class="box"  id="myGrid">
 
+                </div>
+                <button class="restart" id="restart">Заново</button>
+                <button class="start" id="start">Старт</button>
+            </div>
+    </div>
+<script src="play_2.js"></script>
 </body>
 </html>
+
+<!--Сюда нужно прописать в джава <br>
+                скрипте сетку как в крестиках ноликах и ячейки будут <br>
+                загораться если не правильно нажал то все красные и с крестиками <br>
+                стиль такойже как в когнетивном реакторе-->
+<!--
+SPA
+MPA
+Картинка
+го ноу го
+решение примеров на скорость
+запоминание что горело и попорядку нажимать
+-->
