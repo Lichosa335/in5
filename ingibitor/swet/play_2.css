@@ -43,7 +43,7 @@ a{
 .praw{
     grid-column: 1/5;
     grid-row: 2/8;
-    margin: 20px 40px 0px 10px;
+    margin: 20px 0px 0px 0px;
     border-radius: 10px;
     background-color: rgb(127, 158, 215);
 
@@ -57,7 +57,7 @@ a{
     text-align: center;
     color: #ffffffff;
     padding: 10px;
-    margin: 40px 40px 0px 10px;
+    margin: 40px 0px 0px 0px;
     border-radius: 10px;
 }
 h1{
@@ -85,13 +85,13 @@ h1{
     text-align: center;
     color: #ffffffff;
     padding: 10px;
-    margin: 40px 40px 0px 10px;
+    margin: 40px 0px 0px 10px;
     border-radius: 10px;
 }
 .play{
     grid-column: 5/9;
     grid-row: 2/8;
-    margin: 20px 40px 0px 10px;
+    margin: 20px 0px 0px 10px;
     border-radius: 10px;
     background-color: rgb(99, 130, 187);
     display: grid;
@@ -111,7 +111,7 @@ h1{
 .fot{
     grid-row: 2/6;
     grid-column: 1/7;
-    margin: 20px;
+    margin: 0px;
     width: 100%;
 }
 /*ВАЖНООООО*/
@@ -197,5 +197,14 @@ h1{
 
 
 
+/*Здесь медиа запросы!!!*/
+@media (max-width: 500px){
 
+h1{
+
+}
+.tex{
+    font-size:17px;
+}
+}
 

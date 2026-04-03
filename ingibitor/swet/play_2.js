@@ -15,7 +15,7 @@ document.getElementById('play').addEventListener('click', function(){
     const pol2 = document.getElementById('pol2');
     pol1.classList.add('nowid');
     pol2.classList.remove('nowid');
-    resetGame(); // Сбрасываем игру при открытии
+    resetGame();
 });
 
 document.getElementById('esc').addEventListener('click', function(){
