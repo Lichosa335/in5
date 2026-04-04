@@ -30,3 +30,17 @@ document.getElementById('close2').addEventListener('click', function(){
     const pol1 = document.getElementById('po2');
     pol1.classList.add('nowid');
 });
+// Добавьте всем кнопкам атрибут data-href
+document.querySelectorAll('[data-href]').forEach(element => {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = this.getAttribute('data-href');
+        const target = this.getAttribute('data-target') || '_self';
+
+        if (target === '_blank') {
+            window.open(url, '_blank');
+        } else {
+            window.location.href = url;
+        }
+    });
+});
