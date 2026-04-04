@@ -8,16 +8,14 @@ body {
     -moz-user-select: none;     /* Firefox */
     -ms-user-select: none;      /* Internet Explorer */
     user-select: none;
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-seri;
-}
-.b{
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
     width: 100%;      /* На всю ширину родителя */
     height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-seri;
 }
+
 .pole{
     opacity: 70%;
     margin: 20px;
@@ -210,4 +208,86 @@ a{
         font-weight: 500;
     }
 }
+@media (max-width: 850px){
+    li {
+        font-size: 25px;
 
+    }
+    ol{
+        margin: 0px 20px 20px 20px;
+        border-radius: 15px;
+    }
+    .pod{
+        font-size:30px
+    }
+    h1{
+        font-size: 35px;
+        font-weight: 500;
+    }
+    body {
+        display: block;
+    }
+    .bib{
+        position: relative;
+        left: 25%;
+        padding: 20px;
+    }
+}
+@media (max-width: 650px){
+    li {
+        font-size: 25px;
+        margin: 20px;
+    }
+    ol{
+        margin: 20px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    .pod{
+        font-size:25px;
+        margin: 0px 10px 0px 10px;
+    }
+    h1{
+        font-size: 35px;
+        font-weight: 500;
+    }
+    body {
+        display: block;
+    }
+    .bib{
+        position: relative;
+        left: 20%;
+        padding: 20px;
+    }
+        .pole{
+        opacity: 70%;
+        margin: 20px;
+        grid-row: 1/6;
+        grid-column: 1/4;
+        border-radius: 15px;
+        background-color: rgb(99, 130, 187);
+        display: block;
+
+    }
+}
+@media (max-width: 550px){
+    .bib{
+        position: relative;
+        left: 0%;
+        padding: 20px;
+
+    }
+    .pod{
+        font-size:18px;
+        margin: 0px 10px 0px 10px;
+    }
+    h1{
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .pole{
+        margin: 0px;
+
+    }
+
+}
