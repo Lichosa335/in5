@@ -1,6 +1,5 @@
 const media = window.matchMedia('(max-width: 768px)');
 
-// ИСПРАВЛЕНО: функция должна принимать элемент и применять класс к pol1
 function Class(e) {
     const el = document.getElementById('pol1'); // Находим конкретный элемент
     if (e.matches) {
@@ -25,10 +24,10 @@ document.getElementById('esc').addEventListener('click', function(){
     const pol2 = document.getElementById('pol2');
     pol2.classList.add('nowid');
     pol1.classList.remove('nowid');
-    stopGame(); // Останавливаем игру при выходе
+    stopGame();
 });
 
-// ========== ИГРА "ЗАПОМНИ КОМБИНАЦИЮ" ==========
+//  ИГРА ЗАПОМНИ КОМБИНАЦИЮ
 
 const grid = document.getElementById('myGrid');
 let cells = [];
@@ -50,13 +49,13 @@ for (let i = 0; i < 9; i++) {
     cells.push(cell);
 }
 
-// Элементы UI
+
 const numberEl = document.getElementById('number');
 const shetEl = document.getElementById('shet');
 const startBtn = document.getElementById('start');
 const restartBtn = document.getElementById('restart');
 
-// Функция подсветки ячейки
+//подсветка ячейки
 function highlightCell(index, color = '#4CAF50') {
     const cell = cells[index];
     const originalBg = cell.style.backgroundColor;
@@ -105,11 +104,10 @@ function checkPlayerMove(index) {
 
         // Если последовательность полностью повторена
         if (playerSequence.length === sequence.length) {
-            // Правильно! + очки
+
             score += 10 * level;
             updateUI();
 
-            // Переход на следующий уровень
             level++;
             playerSequence = [];
             addToSequence();
@@ -125,7 +123,7 @@ function checkPlayerMove(index) {
         }
         return true;
     } else {
-        // Неправильный ход - штраф и конец игры
+        // Неправильный ход
         highlightCell(index, '#f44336');
         score = Math.max(0, score - 5);
         updateUI();
@@ -157,13 +155,12 @@ function gameOver() {
     }, 300);
 }
 
-// Обновление UI
 function updateUI() {
     numberEl.textContent = `Уровень: ${level}`;
     shetEl.textContent = `Счёт: ${score}`;
 }
 
-// Сброс игры (полный)
+// Сброс игры
 function resetGame() {
     sequence = [];
     playerSequence = [];
@@ -185,8 +182,8 @@ function resetGame() {
 function startGame() {
     if (isPlaying) return;
 
-    resetGame();        // Полностью сбрасываем всё
-    addToSequence();    // Генерируем первую последовательность
+    resetGame();
+    addToSequence();
     updateUI();
 
     isPlaying = true;
@@ -198,17 +195,16 @@ function startGame() {
         }
     }, 500);
 }
-
-// ========== НОВАЯ ФУНКЦИЯ: ПОВТОРИТЬ ПОСЛЕДНЮЮ КОМБИНАЦИЮ ==========
+/*кнопка заново*/
 function repeatLastCombination() {
     if (!isPlaying) return; // Игра не активна
 
-    // Останавливаем текущие процессы (показ последовательности или ожидание клика)
+    // Останавливаем текущие процессы
     isShowingSequence = false;
     canClick = false;
-    playerSequence = []; // Сбрасываем введённую игроком последовательность
+    playerSequence = [];
 
-    // Показываем текущую последовательность (последнюю комбинацию) заново
+    // Показываем текущую последовательность
     setTimeout(() => {
         if (isPlaying) {
             showSequence();
@@ -226,12 +222,12 @@ function stopGame() {
 // Обработчики кнопок
 startBtn.addEventListener('click', startGame);
 
-// ИСПРАВЛЕНА КНОПКА "ЗАНОВО": повторяет последнюю комбинацию
+
 restartBtn.addEventListener('click', () => {
     if (isPlaying) {
         repeatLastCombination(); // Повторяем комбинацию
     } else {
-        // Если игра не активна, можно просто сбросить (или ничего не делать)
+
         resetGame();
     }
 });
