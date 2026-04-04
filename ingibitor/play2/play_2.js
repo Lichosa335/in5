@@ -1,6 +1,8 @@
 const media = window.matchMedia('(max-width: 768px)');
+
+// ИСПРАВЛЕНО: функция должна принимать элемент и применять класс к pol1
 function Class(e) {
-    const el = document.querySelector('div');
+    const el = document.getElementById('pol1'); // Находим конкретный элемент
     if (e.matches) {
         el.classList.remove('pol1');
     } else {
@@ -54,13 +56,6 @@ const shetEl = document.getElementById('shet');
 const startBtn = document.getElementById('start');
 const restartBtn = document.getElementById('restart');
 
-// Цвета для ячеек (индексы 0-8)
-const colors = [
-    '#4CAF50', '#2196F3', '#FF9800',
-    '#9C27B0', '#E91E63', '#00BCD4',
-    '#FFEB3B', '#795548', '#607D8B'
-];
-
 // Функция подсветки ячейки
 function highlightCell(index, color = '#4CAF50') {
     const cell = cells[index];
@@ -74,10 +69,14 @@ function highlightCell(index, color = '#4CAF50') {
 
 // Показать последовательность
 async function showSequence() {
+    if (!isPlaying) return; // Если игра остановлена, не показываем
+
     isShowingSequence = true;
     canClick = false;
 
     for (let i = 0; i < sequence.length; i++) {
+        // Проверка, не остановлена ли игра во время показа
+        if (!isPlaying) return;
         const cellIndex = sequence[i];
         highlightCell(cellIndex, '#4CAF50');
         await new Promise(resolve => setTimeout(resolve, 500));
@@ -118,7 +117,10 @@ function checkPlayerMove(index) {
 
             // Показываем новую последовательность
             setTimeout(() => {
-                showSequence();
+                // Проверка, не остановлена ли игра
+                if (isPlaying) {
+                    showSequence();
+                }
             }, 500);
         }
         return true;
@@ -161,7 +163,7 @@ function updateUI() {
     shetEl.textContent = `Счёт: ${score}`;
 }
 
-// Сброс игры
+// Сброс игры (полный)
 function resetGame() {
     sequence = [];
     playerSequence = [];
@@ -183,18 +185,35 @@ function resetGame() {
 function startGame() {
     if (isPlaying) return;
 
-    resetGame();
-
-    // Генерируем первую последовательность
-    addToSequence();
+    resetGame();        // Полностью сбрасываем всё
+    addToSequence();    // Генерируем первую последовательность
     updateUI();
 
     isPlaying = true;
 
     // Показываем последовательность
     setTimeout(() => {
-        showSequence();
+        if (isPlaying) {
+            showSequence();
+        }
     }, 500);
+}
+
+// ========== НОВАЯ ФУНКЦИЯ: ПОВТОРИТЬ ПОСЛЕДНЮЮ КОМБИНАЦИЮ ==========
+function repeatLastCombination() {
+    if (!isPlaying) return; // Игра не активна
+
+    // Останавливаем текущие процессы (показ последовательности или ожидание клика)
+    isShowingSequence = false;
+    canClick = false;
+    playerSequence = []; // Сбрасываем введённую игроком последовательность
+
+    // Показываем текущую последовательность (последнюю комбинацию) заново
+    setTimeout(() => {
+        if (isPlaying) {
+            showSequence();
+        }
+    }, 100);
 }
 
 // Остановка игры
@@ -206,10 +225,13 @@ function stopGame() {
 
 // Обработчики кнопок
 startBtn.addEventListener('click', startGame);
+
+// ИСПРАВЛЕНА КНОПКА "ЗАНОВО": повторяет последнюю комбинацию
 restartBtn.addEventListener('click', () => {
     if (isPlaying) {
-        startGame(); // Перезапуск
+        repeatLastCombination(); // Повторяем комбинацию
     } else {
+        // Если игра не активна, можно просто сбросить (или ничего не делать)
         resetGame();
     }
 });
