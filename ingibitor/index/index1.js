@@ -1,14 +1,4 @@
-const media = window.matchMedia('(max-width: 768px)');
-function Class(e) {
-    const el = document.querySelector('div');
-    if (e.matches) {
-        el.classList.remove('b');
-    } else {
-        el.classList.add('b');
-    }
-}
-Class(media);
-media.addEventListener('change', Class);
+
 
 document.getElementById('pl').addEventListener('click', function(){
     const pol1 = document.getElementById('po');

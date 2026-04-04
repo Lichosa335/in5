@@ -34,34 +34,18 @@ body {
     margin: 0px 0px 0px 30px;
     padding: 10px;
     border-radius: 15px;
-    font-size: 20px;
     grid-row: 2;
     grid-column: 1/6;
     background-color:rgb(127, 158, 215);
-}
-ol{
-    background-color:rgb(127, 158, 215);
-    opacity: 80%;
-    margin: -10px 20px 20px 20px;
-    border-radius: 15px;
-    grid-row: 4/7;
-    grid-column: 1/7;
+    font-size:25px
 }
 
-li {
-    margin: 15px;
-    font-size: 20px;
-
-}
 .be{
     grid-row: 1;
     grid-column: 1/7;
     margin: 30px 0px 0px 30px;
 }
-h1{
-    font-size: 30px;
-    font-weight: 500;
-}
+
 .bt1{
     background-color:#FFFFFF;
     border-radius: 7px;
@@ -83,22 +67,12 @@ h1{
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0,0,0);
 }
-.bt3:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0,0,0);
-}
-.bt5:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0,0,0);
-}
-.close:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0,0,0);
-}
-.bt4:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0,0,0);
-}
+
+
+/*СНИЗУ ПОЛЕ КНОПКИ СДЕЛАЙ ВЫБОР И ПОЛЯ ВЫБОРА*/
+
+
+
 .bib{
     grid-row: 5/7;
     grid-column: 5/7;
@@ -115,11 +89,7 @@ h1{
 .bib:active {
     transform: scale(0.9);
 }
-a{
-    text-decoration: none;
-    color: inherit;
-    color: #00000;
-}
+
 .po{
     display: grid;
     grid-template-rows: 0.5fr 1fr 1fr 1fr;
@@ -130,6 +100,26 @@ a{
     z-index: 111;
     border-radius: 15px;
 
+}
+
+/*СНИЗУ КНОПКИ*/
+
+
+.bt3:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0);
+}
+.bt5:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0);
+}
+.close:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0);
+}
+.bt4:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0);
 }
 .bt3{
     grid-row: 4;
@@ -168,8 +158,56 @@ a{
     border-radius: 7px;
     margin: 5px 50px 5px 50px;
 }
+
+/*СНИЗУ ВАЖНЫЕ ЭЛЕМЕНТЫ*/
+
+
+h1{
+    font-size: 30px;
+    font-weight: 500;
+}
+ol{
+    background-color:rgb(127, 158, 215);
+    opacity: 80%;
+    margin: -10px 20px 20px 20px;
+    border-radius: 15px;
+    grid-row: 4/7;
+    grid-column: 1/7;
+}
+
+li {
+    margin: 15px;
+    font-size: 20px;
+
+}
 .nowid{
     display: none;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+    color: #00000;
+}
 
+
+/*СНИЗУ АДАПТАЦИЯ*/
+
+
+@media (max-width: 1150px){
+    li {
+        font-size: 15px;
+
+    }
+    ol{
+        margin: 0px 20px 20px 20px;
+        border-radius: 15px;
+    }
+    .pod{
+        font-size:20px
+    }
+    h1{
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
 
