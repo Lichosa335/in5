@@ -324,7 +324,7 @@ h1{
     .game-cell {
         width: calc(33.33% - 10px);
         min-width: 70px;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .stat-badge {
         padding: 5px 15px;
@@ -333,13 +333,22 @@ h1{
     .first1{
         font-size: 20px
     }
+    .game-container {
+        margin: 20% 0px 0px 10%;
+        width: 80%;
+        height: 10%;
+    }
+    .control-btn{
+        font-size: 15px
+    }
 }
 
 @media (max-width: 500px) {
     .game-cell {
         width: calc(33.33% - 8px);
         min-width: 60px;
-        font-size: 1.2rem;
+        font-size: 2rem;
+
     }
     .stat-badge {
         padding: 5px 12px;
@@ -347,5 +356,13 @@ h1{
     }
     .first1{
         font-size: 20px
+    }
+    .game-container {
+        margin: 20% 0px 0px 10%;
+        width: 80%;
+        height: 10%;
+    }
+    .control-btn{
+        font-size: 15px
     }
 }
