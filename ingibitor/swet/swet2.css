@@ -345,8 +345,7 @@ h1{
 
 @media (max-width: 500px) {
     .game-cell {
-        width: calc(33.33% - 8px);
-        min-width: 60px;
+        width: 30%;
         font-size: 2rem;
 
     }

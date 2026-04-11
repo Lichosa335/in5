@@ -47,7 +47,7 @@ function createGameGrid() {
     
     if (isMobile) {
         // Мобильная версия: 3x3 = 9 ячеек
-        cellsCount = 9;
+        cellsCount = 15;
         for (let i = 0; i < cellsCount; i++) {
             const cell = document.createElement('div');
             cell.className = 'game-cell bg-secondary text-white';
